@@ -1,0 +1,27 @@
+	public boolean isNumberPrime(int number, int upToInteger) {
+		boolean isPrime = true;
+		for (int i = 2; i < upToInteger; i++) {
+			if (number % i == 0) {
+				if (i != 1 && i != number) {
+					isPrime = false;
+				} else {
+					continue;
+				}
+			}
+		}
+		return isPrime;
+	}
+
+	public int[] findPrimesUpTo(int upToInteger) {
+		ArrayList<Integer> primes = new ArrayList<Integer>();
+		for (int i = 2; i < upToInteger; i++) {
+			if (isNumberPrime(i, upToInteger)) {
+				primes.add(i);
+			}
+		}
+		int[] primesArr = new int[primes.size()];
+		for (int i = 0; i < primesArr.length; i++) {
+			primesArr[i] = primes.get(i);
+		}
+		return primesArr;
+	}
