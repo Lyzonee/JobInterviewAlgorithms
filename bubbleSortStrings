@@ -1,0 +1,22 @@
+	public String[] bubbleSortStrings(String[] arrayToSort) {
+		boolean swapped = false;
+		for (int i = 0; i < arrayToSort.length; i++) {
+			for (int j = 0; j < arrayToSort.length; j++) {
+				if (arrayToSort.length >= j + 2) {
+					if (arrayToSort[j].compareTo(arrayToSort[j + 1]) > 0) {
+						String J = arrayToSort[j];
+						String Jplus1 = arrayToSort[j + 1];
+						arrayToSort[j] = Jplus1;
+						arrayToSort[j + 1] = J;
+						swapped = true;
+					} else {
+						continue;
+					}
+				}
+			}
+			if (swapped == false) {
+				break;
+			}
+		}
+		return arrayToSort;
+	}
