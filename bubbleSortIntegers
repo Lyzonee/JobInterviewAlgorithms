@@ -1,0 +1,17 @@
+	public int[] bubbleSortIntegers(int[] arrayToSort) {
+		boolean swapped = false;
+		for (int i = 0; i < arrayToSort.length; i++) {
+			for (int j = 0; j < arrayToSort.length; j++) {
+				if (arrayToSort.length >= j + 2) {
+					if (arrayToSort[j] > arrayToSort[j + 1]) {
+						swap(arrayToSort, j, j + 1);
+						swapped = true;
+					}
+				}
+			}
+			if (swapped == false) {
+				break;
+			}
+		}
+		return arrayToSort;
+	}
